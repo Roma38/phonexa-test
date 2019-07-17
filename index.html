@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Phonexa test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+</head>
+<body>
+  <main>
+    <form onsubmit="firstStepSubmitHandler(event)" id="firstForm" class="shiftable-block">
+      <h1 class="title">Register a new user</h1>
+      <input class="form-field" type="text" placeholder="First Name*" id="firstName">
+      <p id="firstNameError" class="errorMessage"></p>
+      <input class="form-field" type="text" placeholder="Last Name*" id="lastName">
+      <p id="lastNameError" class="errorMessage"></p>
+      <input class="form-field" type="text" placeholder="Login*" id="login">
+      <p id="loginError" class="errorMessage"></p>
+      <input class="form-field" type="text" placeholder="Email*" id="email">
+      <p id="emailError" class="errorMessage"></p>
+      <input class="form-field" type="text" placeholder="Company Name"id="company">
+      <input class="form-field" type="password" placeholder="Password*" id="password">
+      <p id="passwordError" class="errorMessage"></p>
+      <input class="form-field" type="password" placeholder="Confirm Password*" id="confirmPassword">
+      <p id="confirmPasswordError" class="errorMessage"></p>
+      <button class="button" type="submit">Next Step</button>
+    </form>
+
+    <form onsubmit="secondStepSubmitHandler(event)" id="secondForm" class="hidden">
+      <h1 class="title">Choose your specialization</h1>
+      <select class="form-field" name="department" id="departmentSelect">
+        <option value="" disabled selected>Department</option>
+      </select>
+      <p id="departmentError" class="errorMessage"></p>
+      <select class="form-field" name="vacancy" id="vacancySelect" disabled>
+        <option value="" disabled selected>Vacancy</option>
+      </select>
+      <p id="vacancyError" class="errorMessage"></p>
+      <button class="button" type="submit">Next Step</button>
+    </form>
+
+    <div class="hidden" id="resultDiv">
+      <h1 class="title">Check your information:</h1>
+      <div class="user-data-div">
+        <p>Name: <span id="resultName"></span></p>
+        <p>Login: <span id="resultLogin"></span></p>
+        <p>Email: <span id="resultEmail"></span></p>
+        <p>Company: <span id="resultCompany"></span></p>
+        <p>Department: <span id="resultDepartment"></span></p>
+        <p>Job Title: <span id="resultVacancy"></span></p>
+      </div>
+      <p class="text-message">Click send if everything correct. Click edit if you see error</p>
+      <button class="button" onclick="editCLickHandler(event)">Edit</button>
+      <button class="button" onclick="sendClickHandler(event)">Send</button>      
+    </div>
+
+    <h1 id="thankYouMessage" class="title hidden">Thank you!</h1>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
